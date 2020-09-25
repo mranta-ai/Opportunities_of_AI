@@ -1,0 +1,517 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Computer vision &#8212; Opportunities of AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. A simple example with MNIST" href="1_2_comp_vision_example_mnist.html" />
+    <link rel="prev" title="Opportunities of AI" href="0_Book_intro.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Opportunities of AI</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="0_Book_intro.html">
+   Opportunities of AI
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Computer vision
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Computer vision
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_2_comp_vision_example_mnist.html">
+   2. A simple example with MNIST
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1_3_comp_vision_example_dogs_cats.html">
+   3. Example - dogs and cats
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Natural language processing
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_1_Introduction_to_NLP.html">
+   1. Introduction to NLP
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_2_LDA_example.html">
+   2. Text analysis example - LDA and other summarisation tools
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2_3_IMDB_example.html">
+   3. Text analysis example - IMDB
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Decision making
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_1_Introduction_to_decision_making.html">
+   1. Introduction to decision making
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3_2_decision_making_Example.html">
+   2. Example of decisiong making - gradient boosting and a collection of interpretation metrics
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/1_1_Introduction_to_computer_vision.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/1_1_Introduction_to_computer_vision.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/1_1_Introduction_to_computer_vision.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computer-vision-applications">
+   1.1. Computer vision applications
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#machine-learning-tools">
+   1.2. Machine learning tools
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#support-vector-machines">
+     1.2.1. Support vector machines
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#neural-networks">
+     1.2.2. Neural networks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probabilistic-graphical-models">
+     1.2.3. Probabilistic graphical models
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-machine-learning-libraries">
+   1.3. Key Machine learning libraries
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#opencv">
+     1.3.1. OpenCV
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accord-net">
+     1.3.2. Accord.net
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tensorflow">
+     1.3.3. Tensorflow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cuda">
+     1.3.4. CUDA
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simplecv">
+     1.3.5. SimpleCV
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scipy">
+     1.3.6. Scipy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#computer-vision-in-different-fields">
+   1.4. Computer vision in different fields
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convolutional-neural-networks">
+   1.5. Convolutional neural networks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relus">
+     1.5.1. ReLUs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pooling-layers">
+     1.5.2. Pooling layers
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#feature-maps">
+     1.5.3. Feature maps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#best-pretrained-models">
+     1.5.4. Best pretrained models
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="computer-vision">
+<h1><span class="section-number">1. </span>Computer vision<a class="headerlink" href="#computer-vision" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>In computer vision, a machine learning model uses the image and pattern mappings to find solutions.</p></li>
+<li><p>The model analyses the image as an array of pixels.</p></li>
+<li><p>This has applications in many monitoring,  inspection, and surveillance tasks.</p></li>
+</ul>
+<div class="section" id="computer-vision-applications">
+<h2><span class="section-number">1.1. </span>Computer vision applications<a class="headerlink" href="#computer-vision-applications" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Classification of the content in an image.</p></li>
+<li><p>Detecting different objects in an image.</p></li>
+<li><p>Detecting and locating multiple objects in an image.</p></li>
+<li><p>Instance segmentation, where objects are located at the pixel level also within a cluster of similar objects, drawing the boundaries for each of them.</p></li>
+<li><p>The automatic analysis/annotation of videos and images.</p></li>
+</ul>
+<p><img alt="application_examples" src="_images/comp_vis_examples.png" /></p>
+</div>
+<div class="section" id="machine-learning-tools">
+<h2><span class="section-number">1.2. </span>Machine learning tools<a class="headerlink" href="#machine-learning-tools" title="Permalink to this headline">¶</a></h2>
+<p>Some of the key technologies in computer vision are:</p>
+<ul class="simple">
+<li><p>Support vector machines</p></li>
+<li><p>Neural networks</p></li>
+<li><p>Probabilistic graphical models.</p></li>
+</ul>
+<div class="section" id="support-vector-machines">
+<h3><span class="section-number">1.2.1. </span>Support vector machines<a class="headerlink" href="#support-vector-machines" title="Permalink to this headline">¶</a></h3>
+<p>The Support Vector Machine (SVM) was previously one of the most popular algorithms in modern machine learning. It often provides very impressive classification performance on reasonably sized datasets. However, SVMs have difficulties with large datasets since the computations don’t scale well with the number of training examples. This poor performance with large datasets hinders somewhat their success in computer vision and is the reason why neural networks have partly replaced SVMs.
+<img alt="SVMG" src="_images/svm.png" /></p>
+</div>
+<div class="section" id="neural-networks">
+<h3><span class="section-number">1.2.2. </span>Neural networks<a class="headerlink" href="#neural-networks" title="Permalink to this headline">¶</a></h3>
+<p>Neural networks are a large class of models and learning methods. The most traditional is the single hidden layer back-propagation network or a single layer perceptron.</p>
+<p><img alt="trad_nnetwork" src="_images/trad_nnetwork.svg" /></p>
+<p>Despite the hype surrounding neural networks, they are no different from other nonlinear statistical models. They are just networks of neurons that calculate linear combinations of input values and input these linear combinations to nonlinear activation functions. The result is a powerful learning method, with widespread applications in many fields. The most successful neural network architectures in computer vision are convolutional neural networks that are introduced in more detail below.</p>
+</div>
+<div class="section" id="probabilistic-graphical-models">
+<h3><span class="section-number">1.2.3. </span>Probabilistic graphical models<a class="headerlink" href="#probabilistic-graphical-models" title="Permalink to this headline">¶</a></h3>
+<p>A structured probabilistic model is a way of describing a probability distribution, using a graph to describe which random variables in the probability distribution interact with each other directly.</p>
+</div>
+</div>
+<div class="section" id="key-machine-learning-libraries">
+<h2><span class="section-number">1.3. </span>Key Machine learning libraries<a class="headerlink" href="#key-machine-learning-libraries" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="opencv">
+<h3><span class="section-number">1.3.1. </span>OpenCV<a class="headerlink" href="#opencv" title="Permalink to this headline">¶</a></h3>
+<p>The description from <a class="reference external" href="https://www.opencv.org">www.opencv.org</a>: “OpenCV (Open Source Computer Vision Library) is an open-source computer vision and machine learning software library. OpenCV was built to provide a common infrastructure for computer vision applications and to accelerate the use of machine perception in commercial products. Being a BSD-licensed product, OpenCV makes it easy for businesses to utilize and modify the code.</p>
+<p>The library has more than 2500 optimized algorithms, which includes a comprehensive set of both classic and state-of-the-art computer vision and machine learning algorithms. These algorithms can be used to detect and recognize faces, identify objects, classify human actions in videos, track camera movements, track moving objects, extract 3D models of objects, produce 3D point clouds from stereo cameras, stitch images together to produce a high-resolution image of an entire scene, find similar images from an image database, remove red eyes from images taken using flash, follow eye movements, recognize scenery and establish markers to overlay it with augmented reality, etc. OpenCV has more than 47 thousand people of user community and the estimated number of downloads exceeding 18 million. The library is used extensively in companies, research groups and by governmental bodies.”</p>
+</div>
+<div class="section" id="accord-net">
+<h3><span class="section-number">1.3.2. </span>Accord.net<a class="headerlink" href="#accord-net" title="Permalink to this headline">¶</a></h3>
+<p>The description from <a class="reference external" href="https://www.accord-framework.net">www.accord-framework.net</a>: “Accord.NET is a framework for scientific computing in .NET. The framework is comprised of multiple libraries encompassing a wide range of scientific computing applications, such as statistical data processing, machine learning, pattern recognition, including but not limited to, computer vision and computer audition. The framework offers a large number of probability distributions, hypothesis tests, kernel functions and support for most popular performance measurements techniques.”</p>
+</div>
+<div class="section" id="tensorflow">
+<h3><span class="section-number">1.3.3. </span>Tensorflow<a class="headerlink" href="#tensorflow" title="Permalink to this headline">¶</a></h3>
+<p>Tensorflow is a general-purpose machine learning library developed by Google and extremely popular among machine learning practitioners at the moment. It has very advanced deep learning libraries for computer vision, image processing and classification. However, it has somewhat awkward syntax, especially for those accustomed to the Python-style syntax, which has caused competing libraries, like PyTorch, to gain popularity recently. Tensorflow is a lower-level library than for example OpenCV, and f you want to perform image processing with TensorFlow, you’d have to understand what machine and deep Learning is, write your own algorithms, and then go forward from there.</p>
+</div>
+<div class="section" id="cuda">
+<h3><span class="section-number">1.3.4. </span>CUDA<a class="headerlink" href="#cuda" title="Permalink to this headline">¶</a></h3>
+<p>CUDA is a library for parallel computing developed by Nvidia. Its’ purpose is to utilize the power GPUs for machine learning calculations. The CUDA Toolkit includes the NVIDIA Performance Primitives library, which is a collection of signal, image, and video processing functions. If you have large images to process, that are GPU intensive, you can choose to use CUDA. CUDA is a low-level library.</p>
+</div>
+<div class="section" id="simplecv">
+<h3><span class="section-number">1.3.5. </span>SimpleCV<a class="headerlink" href="#simplecv" title="Permalink to this headline">¶</a></h3>
+<p>The description from <a class="reference external" href="https://www.simplecv.org">www.simplecv.org</a>: “SimpleCV is an open-source framework for building computer vision applications. With it, you get access to several high-powered computer vision libraries such as OpenCV – without having to first learn about bit depths, file formats, colour spaces, buffer management, eigenvalues, or matrix versus bitmap storage. This is computer vision made easy.”</p>
+</div>
+<div class="section" id="scipy">
+<h3><span class="section-number">1.3.6. </span>Scipy<a class="headerlink" href="#scipy" title="Permalink to this headline">¶</a></h3>
+<p>SciPy is a Python-based ecosystem of open-source software for mathematics, science, and engineering that includes few of the most popular Python libraries, live Numpy, Matplotlib, IPython, Sympy and Pandas. Although Scipy is not specifically designed for computer vision, it is used quite often for that purpose. With Numpy’s efficient array manipulations, the ecosystem is easily powerful enough to perform image processing.</p>
+</div>
+</div>
+<div class="section" id="computer-vision-in-different-fields">
+<h2><span class="section-number">1.4. </span>Computer vision in different fields<a class="headerlink" href="#computer-vision-in-different-fields" title="Permalink to this headline">¶</a></h2>
+<p>Computer vision is important in fields such as meteorology, agriculture, biological sciences, face recognition, human activity measurement, medical sciences, professional sports and traffic monitoring.
+<img alt="vision_fiels" src="_images/comp_vision_fields.png" /></p>
+</div>
+<div class="section" id="convolutional-neural-networks">
+<h2><span class="section-number">1.5. </span>Convolutional neural networks<a class="headerlink" href="#convolutional-neural-networks" title="Permalink to this headline">¶</a></h2>
+<p>In the computer vision context, the input for convolutional neural networks (CNN) is a multi-channeled image (instead of a vector that is commonly used in standard feed-forward neural networks), i.e. a 3D-tensor (several channels of 2D images).</p>
+<p>The network consists of convolution layers and pooling layers.</p>
+<p><img alt="image.png" src="_images/conv_structure_1.png" /></p>
+<p>The convolution layers filter feature maps (channels in the original image) with small filters that are slid through the maps.</p>
+<ul class="simple">
+<li><p>Convolution  = filtering –&gt; A dot product between the filter and a portion of the image (plus bias).</p></li>
+<li><p>The filter is slid through an image (every channel of the image).</p></li>
+<li><p>As a result, we get a slightly smaller “image” of dot products.</p></li>
+<li><p>The convolution layer is the main building block of CNNs</p></li>
+</ul>
+<p>The fundamental difference between a densely connected layer and a convolution layer is that dense layers learn global structures in their input feature maps (channels), whereas convolution layers learn local patterns. This is useful in computer vision problems because, in the case of images, these local patterns can be located anywhere in the image. Moreover, CNNs have usually chains of convolutional layers, which causes these learned patterns to become more “complex” the deeper we are in the CNN. The first convolutional layers learn arcs, lines etc. and later layers connect these to circles and other more complex structures (, of course depending on the computer vision task at hand). A first convolutional layer learns small and simple patterns, a second convolutional layer learns patterns that are constructed from the patterns of the first layer, and so on.</p>
+<p>These characteristic give CNNs interesting properties. For example, the learned patterns are translation invariant. A certain pattern learned at a certain location can be recognised anywhere in an image, a key property for computer vision tasks. A traditional feed-forward network would have to learn a certain pattern anew for every location in an image. This makes CNNs data-efficient; they need fewer training samples to learn representations that have generalisation power.</p>
+<div class="section" id="relus">
+<h3><span class="section-number">1.5.1. </span>ReLUs<a class="headerlink" href="#relus" title="Permalink to this headline">¶</a></h3>
+<p>CNNs usually use rectified linear units (ReLU) as activation functions to add nonlinearity, just like traditional densely connected neural networks. Without a non-linear activation function, the network would be linear (no matter how many layers, a linear combination of linear combinations is still a linear combination).</p>
+<p><img alt="image.png" src="_images/relu.svg" /></p>
+</div>
+<div class="section" id="pooling-layers">
+<h3><span class="section-number">1.5.2. </span>Pooling layers<a class="headerlink" href="#pooling-layers" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Its function is to progressively reduce the spatial size of the representation to reduce the number of parameters and computation in the network. Pooling layer operates on each feature map independently.</p></li>
+<li><p>The most common approach used in pooling is max pooling.</p></li>
+</ul>
+<p><img alt="image.png" src="_images/Max_pooling.png" /></p>
+</div>
+<div class="section" id="feature-maps">
+<h3><span class="section-number">1.5.3. </span>Feature maps<a class="headerlink" href="#feature-maps" title="Permalink to this headline">¶</a></h3>
+<p>As I mentioned, convolutional layers operate over 3D tensors, called feature maps, with two spatial axes (2D image) as well as a depth axis (also called the channels axis). For a usual RGB image, the dimension of the depth axis is  3 (red, green and blue). For a black-and-white picture, there is no depth axis, but one feature map representing different levels of grey (or the third dimension has unit length). The convolution operation extracts patches from its input feature map and applies the same transformation to all of these patches, producing an output feature map. This output feature map is still a 3D tensor: it has a width and a height that depend on the convolutional filter used. The depth is a parameter of the model, which increases when moving from left to right in a CNN. However, this does not increase the number of parameters in a model, because CNNs usually use pooling layers to decrease the size of feature maps. The channels no longer stand for specific colours as in an RGB input; rather, they stand for filters. Filters encode specific aspects of the input data: at a high level, a single filter could encode the concept “presence of a face in the input” for instance.</p>
+<p><img alt="image.png" src="_images/feature_maps.png" /></p>
+</div>
+<div class="section" id="best-pretrained-models">
+<h3><span class="section-number">1.5.4. </span>Best pretrained models<a class="headerlink" href="#best-pretrained-models" title="Permalink to this headline">¶</a></h3>
+<p>It is often beneficial to use pre-trained networks in practical computer vision applications. Pretrained networks have their parameters trained with very large datasets using HPC capabilities. A very common dataset is Imagenet that has over 14 million images (<a class="reference external" href="https://www.image-net.org">www.image-net.org</a>). Below are some popular pre-trained networks that have proven to be very efficient, according to the ImageNet Large Scale Visual Recognition Challenge -winners.</p>
+<p><strong>ImageNet Large Scale Visual Recognition Challenge -winners</strong></p>
+<p>Previous winners, with shallow neural networks, achieved around 25 % error rate. The examples below are all deep convolutional neural networks.</p>
+<ul class="simple">
+<li><p>2012 - Alexnet - 8 layers - 16 % error rate - a much deeper structure and utilised GPUs during training</p></li>
+<li><p>2013 - ZF-net - 8 layers - 12 % error rate</p></li>
+<li><p>2014 - VGG - 19 layers - 7.3 % error rate</p></li>
+<li><p>2014 - GoogleNet - 22 layers - 6.7 % error rate</p></li>
+</ul>
+<p>Human error rate around 5 %</p>
+<ul class="simple">
+<li><p>2015 - ResNet - 152 layers - 3.6 % error rate - innovation: a residual learning framework that improves the training of very deep networks</p></li>
+<li><p>2016 - Ensemble of previous models - 3.0 % error rate</p></li>
+<li><p>2017 - SENet - 2.25 % error rate</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="0_Book_intro.html" title="previous page">Opportunities of AI</a>
+    <a class='right-next' id="next-link" href="1_2_comp_vision_example_mnist.html" title="next page"><span class="section-number">2. </span>A simple example with MNIST</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Mikko Ranta<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>
