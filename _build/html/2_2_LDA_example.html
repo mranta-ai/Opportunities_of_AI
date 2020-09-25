@@ -423,7 +423,7 @@
 </div>
 </div>
 <p>For the following steps, we need Gensim that is a multipurpose NLP library specially designed for topic modelling.</p>
-<p>Here is a short description from the Gensim Github-page (https://github.com/RaRe-Technologies/gensim):</p>
+<p>Here is a short description from the Gensim Github-page (<a class="reference external" href="https://github.com/RaRe-Technologies/gensim">github.com/RaRe-Technologies/gensim</a>):</p>
 <p>“Gensim is a Python library for topic modelling, document indexing and similarity retrieval with large corpora. Target audience is the natural language processing (NLP) and information retrieval (IR) community.
 Features:</p>
 <ul class="simple">
@@ -492,7 +492,7 @@ Features:</p>
 </div>
 </div>
 </div>
-<p>As a next step, we remove everything else but nouns, adjectives, verbs and adverbs recognised by our language model. As our language model, we use the large English model from Spacy (https://spacy.io/). Here are some key features of Spacy from their web page:</p>
+<p>As a next step, we remove everything else but nouns, adjectives, verbs and adverbs recognised by our language model. As our language model, we use the large English model from Spacy (<a class="reference external" href="https://spacy.io/">spacy.io</a>). Here are some key features of Spacy from their web page:</p>
 <ul class="simple">
 <li><p>Non-destructive tokenisation</p></li>
 <li><p>Named entity recognition</p></li>
@@ -666,7 +666,7 @@ Features:</p>
 </div>
 </div>
 </div>
-<p>This is the main step in our analysis; we build the LDA model. There are many parameters in Gensim’s <strong>LdaModel</strong>. Luckily the default parameters work quite well. You can read more about the parameters from https://radimrehurek.com/gensim/models/ldamodel.html</p>
+<p>This is the main step in our analysis; we build the LDA model. There are many parameters in Gensim’s <strong>LdaModel</strong>. Luckily the default parameters work quite well. You can read more about the parameters from <a class="reference external" href="https://radimrehurek.com/gensim/models/ldamodel.html">radimrehurek.com/gensim/models/ldamodel.html</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lda_model</span> <span class="o">=</span> <span class="n">gensim</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">ldamodel</span><span class="o">.</span><span class="n">LdaModel</span><span class="p">(</span><span class="n">corpus</span><span class="o">=</span><span class="n">corpus</span><span class="p">,</span>
@@ -683,7 +683,7 @@ Features:</p>
 </div>
 </div>
 </div>
-<p><strong>pyLDAvis</strong> is a useful library to visualise the results: (https://github.com/bmabey/pyLDAvis).</p>
+<p><strong>pyLDAvis</strong> is a useful library to visualise the results: <a class="reference external" href="https://github.com/bmabey/pyLDAvis">github.com/bmabey/pyLDAvis</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyLDAvis.gensim</span>

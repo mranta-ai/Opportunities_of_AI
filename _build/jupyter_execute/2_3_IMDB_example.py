@@ -153,7 +153,7 @@ y_train = labels[:20000]
 x_val = data[20000: 25000]
 y_val = labels[20000: 25000]
 
-The Stanford NLP group offers GLOVE pre-trained embeddings. You can download them from https://nlp.stanford.edu/projects/glove/. We use the glove6B.zip that is trained using 6 billion tokens. Each word is represented as a 100-dimensional vector.
+The Stanford NLP group offers GLOVE pre-trained embeddings. You can download them from [nlp.stanford.edu/projects/glove/](https://nlp.stanford.edu/projects/glove/). We use the glove6B.zip that is trained using 6 billion tokens. Each word is represented as a 100-dimensional vector.
 
 # we use 100-dimensional vectors
 embeddings_index = {}

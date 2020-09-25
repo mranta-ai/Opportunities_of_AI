@@ -73,7 +73,7 @@ raw_text[0][3200:3500]
 
 For the following steps, we need Gensim that is a multipurpose NLP library specially designed for topic modelling.
 
-Here is a short description from the Gensim Github-page (https://github.com/RaRe-Technologies/gensim):
+Here is a short description from the Gensim Github-page ([github.com/RaRe-Technologies/gensim](https://github.com/RaRe-Technologies/gensim)):
 
 "Gensim is a Python library for topic modelling, document indexing and similarity retrieval with large corpora. Target audience is the natural language processing (NLP) and information retrieval (IR) community.
 Features:
@@ -108,7 +108,7 @@ An example text from the first document after removing the stopwords.
 
 " ".join(docs_nostops[0][300:400])
 
-As a next step, we remove everything else but nouns, adjectives, verbs and adverbs recognised by our language model. As our language model, we use the large English model from Spacy (https://spacy.io/). Here are some key features of Spacy from their web page:
+As a next step, we remove everything else but nouns, adjectives, verbs and adverbs recognised by our language model. As our language model, we use the large English model from Spacy ([spacy.io](https://spacy.io/)). Here are some key features of Spacy from their web page:
 * Non-destructive tokenisation
 * Named entity recognition
 * Support for 59+ languages
@@ -190,7 +190,7 @@ We can check what those words are just by indexing our dictionary **id2word**. A
 
 [id2word[i] for i in range(10)]
 
-This is the main step in our analysis; we build the LDA model. There are many parameters in Gensim's **LdaModel**. Luckily the default parameters work quite well. You can read more about the parameters from https://radimrehurek.com/gensim/models/ldamodel.html
+This is the main step in our analysis; we build the LDA model. There are many parameters in Gensim's **LdaModel**. Luckily the default parameters work quite well. You can read more about the parameters from [radimrehurek.com/gensim/models/ldamodel.html](https://radimrehurek.com/gensim/models/ldamodel.html)
 
 lda_model = gensim.models.ldamodel.LdaModel(corpus=corpus,
                                            id2word=id2word,
@@ -203,7 +203,7 @@ lda_model = gensim.models.ldamodel.LdaModel(corpus=corpus,
                                            per_word_topics=False,
                                             eta = 'auto')
 
-**pyLDAvis** is a useful library to visualise the results: (https://github.com/bmabey/pyLDAvis).
+**pyLDAvis** is a useful library to visualise the results: [github.com/bmabey/pyLDAvis](https://github.com/bmabey/pyLDAvis).
 
 import pyLDAvis.gensim
 

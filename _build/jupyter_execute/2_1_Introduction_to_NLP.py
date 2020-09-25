@@ -56,7 +56,7 @@ The original English-language BERT model comes with two pre-trained general type
 
 At the time introduction, BERT achieved state-of-the-art in many NLP tasks, like language understanding and question answering. BERT started the revolution of modern language models.
 
-(In the picture above is Elmo, not Bert. However, there is also a language model called Elmo.https://allennlp.org/elmo)
+(In the picture above is Elmo, not Bert. However, there is also a language model called Elmo:[allennlp.org](https://allennlp.org/elmo)
 
 #### GPT-3
 GPT-3 is the current state-of-the-art language model that has achieved revolutionary results. It is also the largest ML model to date, with 175 billion parameters. It was trained with data that has 499 billion tokens (words). For example, GPT-3 can create news articles that are difficult to distinguish from human-created news. It is also able to have conversations with a human. However, despite its' stellar performance in creating meaningful text, it still does not understand anything that it is saying.

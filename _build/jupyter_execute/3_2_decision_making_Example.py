@@ -82,7 +82,7 @@ Xgboost uses its' own data structure, called DMatrix. It speeds up calculations 
 
 dtrain = xgb.DMatrix(x_df, label=y_df, nthread = -1)
 
-Next, we need to define the parameters of the xgboost model. This is a very difficult task and more like black magic than science. You can easily play with different hyperparameter settings for days, and still finding combinations that improve performance. And here is only part of the parameters! More info about the parameters is here: https://xgboost.readthedocs.io/en/latest/parameter.html
+Next, we need to define the parameters of the xgboost model. This is a very difficult task and more like black magic than science. You can easily play with different hyperparameter settings for days, and still finding combinations that improve performance. And here is only part of the parameters! More info about the parameters is here: [xgboost.readthedocs.io/en/latest/parameter.html](https://xgboost.readthedocs.io/en/latest/parameter.html)
 
 m_depth = 5
 eta = 0.1
@@ -117,7 +117,7 @@ bst = xgb.train(param,dtrain,num_boost_round=b_rounds)
 
 ### SHAP
 
-Now we have our model trained, and we can start analysing it. Let's start with SHAP (https://github.com/slundberg/shap)
+Now we have our model trained, and we can start analysing it. Let's start with SHAP [github.com/slundberg/shap](https://github.com/slundberg/shap)
 
 import shap
 
@@ -188,7 +188,7 @@ best_xgb_model = xgb.XGBRegressor(colsample_bytree=col_tree, gamma=gam,
 
 best_xgb_model.fit(x_df,y_df)
 
-**pdpbox** library has a function for partial dependence plot and individual conditional expectations: https://github.com/SauceCat/PDPbox
+**pdpbox** library has a function for partial dependence plot and individual conditional expectations: [github.com/SauceCat/PDPbox](https://github.com/SauceCat/PDPbox)
 
 from pdpbox import pdp
 
@@ -199,7 +199,7 @@ pdp_prep = pdp.pdp_isolate(best_xgb_model,x_df.fillna(0),features,features[5])
 fig, axes = pdp.pdp_plot(pdp_prep, features[5],center=False, plot_lines=True,frac_to_plot=0.5)
 plt.savefig('ICE.png')
 
-ALEPython has functions for ALE plots: https://github.com/blent-ai/ALEPython
+ALEPython has functions for ALE plots: [github.com/blent-ai/ALEPython](https://github.com/blent-ai/ALEPython)
 
 import ale
 

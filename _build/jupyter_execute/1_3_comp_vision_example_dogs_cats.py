@@ -1,6 +1,6 @@
 ## Example - dogs and cats
 
-For this example, we need to load the data ourselves that is somewhat laborious. We use image classification data from https://www.kaggle.com/c/dogs-vs-cats. Kaggle organises ML-competitions, and in this competition, the task is to distinguish dogs from cats in images.
+For this example, we need to load the data ourselves that is somewhat laborious. We use image classification data from [www.kaggle.com/c/dogs-vs-cats](https://www.kaggle.com/c/dogs-vs-cats). Kaggle organises ML-competitions, and in this competition, the task is to distinguish dogs from cats in images.
 
 ![Pinto](./images/pinto.png)
 
@@ -8,7 +8,7 @@ First, we load some libraries that are needed to manipulate the image files.
 
 import os,shutil
 
-I have the original training data in the "original_data" folder (under the work folder). You can download the original data from https://www.kaggle.com/c/dogs-vs-cats.
+I have the original training data in the "original_data" folder (under the work folder). You can download the original data from [www.kaggle.com/c/dogs-vs-cats](https://www.kaggle.com/c/dogs-vs-cats).
 
 files = os.listdir('./original_data')
 
@@ -104,6 +104,8 @@ print(len(os.listdir(os.path.join(base_dir,'test','dogs'))))
 print(len(os.listdir(os.path.join(base_dir,'train','cats'))))
 print(len(os.listdir(os.path.join(base_dir,'validation','cats'))))
 print(len(os.listdir(os.path.join(base_dir,'test','cats'))))
+
+### Simple CNN model
 
 As our preliminary model, we test a basic CNN model with four convolutional layers and four max-pooling layers followed by two dense layers with 12544 (flatten) and 512 neurons. The output layer has one neuron with a sigmoid activation function. So, the output is a prediction for one of the two classes.
 
@@ -211,9 +213,11 @@ plt.plot(epochs, val_loss, 'b--', label='Validation loss')
 plt.legend()
 plt.show()
 
+### Augmentation and regularisation
+
 Let's try to improve our model. Augmentation is a common approach to "increase" the amount of data. The idea of augmentation is to transform images slightly every time they are fed to the model. Thus, we are trying to create new information to the model to train on. However, we are not truly creating new information. Nevertheless, augmentation has proven to be an efficient way to improve results.
 
-Image transformation can be implemented to the **ImageDataGenerator()**-function. There are many parameters that can be used to transform images. More information: https://keras.io/api/preprocessing/image/
+Image transformation can be implemented to the **ImageDataGenerator()**-function. There are many parameters that can be used to transform images. More information: [keras.io/api/preprocessing/image/](https://keras.io/api/preprocessing/image/)
 
 datagen = ImageDataGenerator(rotation_range=40,
                              width_shift_range=0.2,
@@ -328,6 +332,8 @@ plt.plot(epochs, val_loss, 'b--', label='Validation loss')
 plt.legend()
 plt.show()
 
+### Pre-trained model
+
 Next thing that we could try is to use a pre-trained model that has its parameters already optimised using some other dataset. Usually, CNNs related to computer vision are pre-trained using Imagenet data (http://www.image-net.org/). It is a vast collection of labelled images.
 
 We add our own layers after the pre-trained architecture. As our pre-trained model, we use VGG16
@@ -415,6 +421,8 @@ plt.plot(epochs, loss, 'r--', label='Training loss')
 plt.plot(epochs, val_loss, 'b--', label='Validation loss')
 plt.legend()
 plt.show()
+
+### Fine tuning
 
 There is still (at least) one thing that we can do to improve our model. We can finetune our pre-trained VGG16 model by opening part of its' weights. As our VGG16 is now optimised for Imagenet data, the weights have information about features that are useful for many different types of images. By opening the last few layers of the model, we allow it to finetune those weights to features that are useful in separating dogs from cats in images.
 
