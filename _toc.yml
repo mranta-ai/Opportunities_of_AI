@@ -1,0 +1,19 @@
+- file: 0_Book_intro
+  numbered: true
+
+- part: Computer vision
+  chapters:
+  - file: 1_1_Introduction_to_computer_vision
+  - file: 1_2_comp_vision_example_mnist
+  - file: 1_3_comp_vision_example_dogs_cats
+
+- part: Natural language processing
+  chapters:
+  - file: 2_1_Introduction_to_NLP
+  - file: 2_2_LDA_example
+  - file: 2_3_IMDB_example
+  
+- part: Decision making
+  chapters:
+  - file: 3_1_Introduction_to_decision_making
+  - file: 3_2_decision_making_Example
