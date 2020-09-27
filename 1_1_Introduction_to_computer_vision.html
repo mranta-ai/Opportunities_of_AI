@@ -349,7 +349,7 @@
 <li><p>Instance segmentation, where objects are located at the pixel level also within a cluster of similar objects, drawing the boundaries for each of them.</p></li>
 <li><p>The automatic analysis/annotation of videos and images.</p></li>
 </ul>
-<p><img alt="application_examples" src="./images/comp_vis_examples.png" /></p>
+<p><img alt="application_examples" src="_images/comp_vis_examples.png" /></p>
 </div>
 <div class="section" id="machine-learning-tools">
 <h2><span class="section-number">1.2. </span>Machine learning tools<a class="headerlink" href="#machine-learning-tools" title="Permalink to this headline">¶</a></h2>
@@ -362,12 +362,12 @@
 <div class="section" id="support-vector-machines">
 <h3><span class="section-number">1.2.1. </span>Support vector machines<a class="headerlink" href="#support-vector-machines" title="Permalink to this headline">¶</a></h3>
 <p>The Support Vector Machine (SVM) was previously one of the most popular algorithms in modern machine learning. It often provides very impressive classification performance on reasonably sized datasets. However, SVMs have difficulties with large datasets since the computations don’t scale well with the number of training examples. This poor performance with large datasets hinders somewhat their success in computer vision and is the reason why neural networks have partly replaced SVMs.
-<img alt="SVMG" src="./images/svm.png" /></p>
+<img alt="SVMG" src="../images/svm.png" /></p>
 </div>
 <div class="section" id="neural-networks">
 <h3><span class="section-number">1.2.2. </span>Neural networks<a class="headerlink" href="#neural-networks" title="Permalink to this headline">¶</a></h3>
 <p>Neural networks are a large class of models and learning methods. The most traditional is the single hidden layer back-propagation network or a single layer perceptron.</p>
-<p><img alt="trad_nnetwork" src="./images/trad_nnetwork.svg" /></p>
+<p><img alt="trad_nnetwork" src="_images/trad_nnetwork.svg" /></p>
 <p>Despite the hype surrounding neural networks, they are no different from other nonlinear statistical models. They are just networks of neurons that calculate linear combinations of input values and input these linear combinations to nonlinear activation functions. The result is a powerful learning method, with widespread applications in many fields. The most successful neural network architectures in computer vision are convolutional neural networks that are introduced in more detail below.</p>
 </div>
 <div class="section" id="probabilistic-graphical-models">
@@ -406,13 +406,13 @@
 <div class="section" id="computer-vision-in-different-fields">
 <h2><span class="section-number">1.4. </span>Computer vision in different fields<a class="headerlink" href="#computer-vision-in-different-fields" title="Permalink to this headline">¶</a></h2>
 <p>Computer vision is important in fields such as meteorology, agriculture, biological sciences, face recognition, human activity measurement, medical sciences, professional sports and traffic monitoring.
-<img alt="vision_fiels" src="./images/comp_vision_fields.png" /></p>
+<img alt="vision_fiels" src="_images/comp_vision_fields.png" /></p>
 </div>
 <div class="section" id="convolutional-neural-networks">
 <h2><span class="section-number">1.5. </span>Convolutional neural networks<a class="headerlink" href="#convolutional-neural-networks" title="Permalink to this headline">¶</a></h2>
 <p>In the computer vision context, the input for convolutional neural networks (CNN) is a multi-channeled image (instead of a vector that is commonly used in standard feed-forward neural networks), i.e. a 3D-tensor (several channels of 2D images).</p>
 <p>The network consists of convolution layers and pooling layers.</p>
-<p><img alt="image.png" src="./images/conv_structure_1.png" /></p>
+<p><img alt="image.png" src="_images/conv_structure_1.png" /></p>
 <p>The convolution layers filter feature maps (channels in the original image) with small filters that are slid through the maps.</p>
 <ul class="simple">
 <li><p>Convolution  = filtering –&gt; A dot product between the filter and a portion of the image (plus bias).</p></li>
@@ -425,7 +425,7 @@
 <div class="section" id="relus">
 <h3><span class="section-number">1.5.1. </span>ReLUs<a class="headerlink" href="#relus" title="Permalink to this headline">¶</a></h3>
 <p>CNNs usually use rectified linear units (ReLU) as activation functions to add nonlinearity, just like traditional densely connected neural networks. Without a non-linear activation function, the network would be linear (no matter how many layers, a linear combination of linear combinations is still a linear combination).</p>
-<p><img alt="image.png" src="./images/relu.svg" /></p>
+<p><img alt="image.png" src="_images/relu.svg" /></p>
 </div>
 <div class="section" id="pooling-layers">
 <h3><span class="section-number">1.5.2. </span>Pooling layers<a class="headerlink" href="#pooling-layers" title="Permalink to this headline">¶</a></h3>
@@ -433,12 +433,12 @@
 <li><p>Its function is to progressively reduce the spatial size of the representation to reduce the number of parameters and computation in the network. Pooling layer operates on each feature map independently.</p></li>
 <li><p>The most common approach used in pooling is max pooling.</p></li>
 </ul>
-<p><img alt="image.png" src="./images/Max_pooling.png" /></p>
+<p><img alt="image.png" src="_images/Max_pooling.png" /></p>
 </div>
 <div class="section" id="feature-maps">
 <h3><span class="section-number">1.5.3. </span>Feature maps<a class="headerlink" href="#feature-maps" title="Permalink to this headline">¶</a></h3>
 <p>As I mentioned, convolutional layers operate over 3D tensors, called feature maps, with two spatial axes (2D image) as well as a depth axis (also called the channels axis). For a usual RGB image, the dimension of the depth axis is  3 (red, green and blue). For a black-and-white picture, there is no depth axis, but one feature map representing different levels of grey (or the third dimension has unit length). The convolution operation extracts patches from its input feature map and applies the same transformation to all of these patches, producing an output feature map. This output feature map is still a 3D tensor: it has a width and a height that depend on the convolutional filter used. The depth is a parameter of the model, which increases when moving from left to right in a CNN. However, this does not increase the number of parameters in a model, because CNNs usually use pooling layers to decrease the size of feature maps. The channels no longer stand for specific colours as in an RGB input; rather, they stand for filters. Filters encode specific aspects of the input data: at a high level, a single filter could encode the concept “presence of a face in the input” for instance.</p>
-<p><img alt="image.png" src="./images/feature_maps.png" /></p>
+<p><img alt="image.png" src="_images/feature_maps.png" /></p>
 </div>
 <div class="section" id="best-pretrained-models">
 <h3><span class="section-number">1.5.4. </span>Best pretrained models<a class="headerlink" href="#best-pretrained-models" title="Permalink to this headline">¶</a></h3>
