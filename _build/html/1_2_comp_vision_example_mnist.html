@@ -56,8 +56,6 @@
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="index.html">
   
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
   
   <h1 class="site-logo" id="site-title">Opportunities of AI</h1>
   
@@ -328,7 +326,7 @@ physical_device_desc: &quot;device: XLA_GPU device&quot;
 <div class="section" id="the-mnist-dataset">
 <h2><span class="section-number">2.1. </span>The MNIST dataset<a class="headerlink" href="#the-mnist-dataset" title="Permalink to this headline">¶</a></h2>
 <p>The MNIST database (Modified National Institute of Standards and Technology database) is a large database of handwritten digits that is commonly used as the first test for computer vision models. These are 28x28 pixel images that are anti-aliased from the original NIST black and white images, and thus, grayscale images with 256 levels. The database contains 60,000 training images and 10,000 testing images.</p>
-<p><img alt="MNIST" src="_images/mnist.png" /></p>
+<p><img alt="MNIST" src="./images/mnist.png" /></p>
 <p><strong>Keras.dataset</strong> has the MNIST dataset, so we avoid the hassle of downloading and preprocessing the dataset by ourselves.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -410,7 +408,7 @@ physical_device_desc: &quot;device: XLA_GPU device&quot;
 <div class="section" id="densely-connected-network">
 <h2><span class="section-number">2.2. </span>Densely connected network<a class="headerlink" href="#densely-connected-network" title="Permalink to this headline">¶</a></h2>
 <p>First, we fit a traditional densely connected feed-forward neural network to the data.</p>
-<p><img alt="image.png" src="_images/feed_forward.png" />!</p>
+<p><img alt="image.png" src="./images/feed_forward.png" />!</p>
 <p>Our data is a 3D-tensor of the form 60000 images x 28 pixels x 28 pixels. Sometimes we need to make the transform (60000,28,28) –&gt; (60000,28,28,1) and sometimes not. If you get an error in the model.fit -step, run the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -553,7 +551,7 @@ Epoch 5/5
 <div class="section" id="convolutional-neural-network">
 <h2><span class="section-number">2.3. </span>Convolutional neural network<a class="headerlink" href="#convolutional-neural-network" title="Permalink to this headline">¶</a></h2>
 <p>Identifying the digits correctly is a computer vision problem. So, we should expect that convolutional neural networks would perform better. Thus, we build a simple CNN to identify the digits.</p>
-<p><img alt="image.png" src="_images/cnn_example.gif" /></p>
+<p><img alt="image.png" src="./images/cnn_example.gif" /></p>
 <p>With Keras, we can also build the network using sequential <strong>add()</strong>-commands. We first define the <strong>Sequential()</strong>-type and then add the layers with the *<em>add()</em> -function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
