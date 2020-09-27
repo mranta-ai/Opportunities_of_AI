@@ -1,4 +1,4 @@
-## Example of decisiong making - gradient boosting and a collection of interpretation metrics
+## Decision making example - gradient boosting and a collection of interpretation metrics
 
 import logging, sys
 logging.disable(sys.maxsize)

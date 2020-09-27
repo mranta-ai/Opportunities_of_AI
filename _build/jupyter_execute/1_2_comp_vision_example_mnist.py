@@ -1,4 +1,4 @@
-## A simple example with MNIST
+## Computer vision example - MNIST
 For our first computer vision example, we use MNIST-data of handwritten digits and build a machine learning model that predicts the correct digit.
 
 We use Keras-library for this example that is now included in Tensorflow. First, we import Tensorflow and define an alias "tf" for it.

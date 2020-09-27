@@ -1,4 +1,4 @@
-## Introduction to NLP
+## Introduction to natural language processing
 
 Natural language processing (NLP) is a collective term referring to computational processing of human languages. It includes methods that analyse human-produced text, and methods that create natural language as output. Compared to many other machine learning tasks, natural language processing is very challenging, as human language is inherently ambiguous, ever-changing, and not well-defined. 
 

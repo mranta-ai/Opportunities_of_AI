@@ -1,4 +1,4 @@
-## Text analysis example - LDA and other summarisation tools
+## NLP example - LDA and other summarisation tools
 In this example, we analyse a collection of academic journals with Latent Dirichlet Allocation (LDA) and other summarisation tools.
 
 To manipulate and list files in directories, we need the **os** -library.

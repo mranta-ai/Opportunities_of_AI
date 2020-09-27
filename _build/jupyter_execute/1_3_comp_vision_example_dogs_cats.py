@@ -1,4 +1,4 @@
-## Example - dogs and cats
+## Computer vision example - dogs and cats
 
 For this example, we need to load the data ourselves that is somewhat laborious. We use image classification data from [www.kaggle.com/c/dogs-vs-cats](https://www.kaggle.com/c/dogs-vs-cats). Kaggle organises ML-competitions, and in this competition, the task is to distinguish dogs from cats in images.
 

@@ -1,4 +1,4 @@
-## Text analysis example - IMDB
+## NLP example - IMDB
 
 In this example, we build a simple neural network model to predict the sentiment of movie reviews.
 
