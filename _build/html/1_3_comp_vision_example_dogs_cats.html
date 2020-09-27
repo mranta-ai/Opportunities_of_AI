@@ -260,7 +260,7 @@
   <div class="section" id="example-dogs-and-cats">
 <h1><span class="section-number">3. </span>Example - dogs and cats<a class="headerlink" href="#example-dogs-and-cats" title="Permalink to this headline">¶</a></h1>
 <p>For this example, we need to load the data ourselves that is somewhat laborious. We use image classification data from <a class="reference external" href="https://www.kaggle.com/c/dogs-vs-cats">www.kaggle.com/c/dogs-vs-cats</a>. Kaggle organises ML-competitions, and in this competition, the task is to distinguish dogs from cats in images.</p>
-<p><img alt="Pinto" src="./images/pinto.png" /></p>
+<p><img alt="Pinto" src="_images/pinto.png" /></p>
 <p>First, we load some libraries that are needed to manipulate the image files.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -291,7 +291,7 @@
 </div>
 </div>
 <p>We do this training “by-the-book” by dividing the data to train, validation and test parts. The validation data is used to finetune the hyperparameters of a model. With separate validation data, we avoid using the hyperparameter optimisation wrongly to optimise the test data performance. Below is an example of a dataset-split that uses 3-fold cross-validation.
-<img alt="Validation" src="./images/Train-Test-Validation.png" /></p>
+<img alt="Validation" src="_images/Train-Test-Validation.png" /></p>
 <p>The following commands build different folders for the training, validation and test data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -539,7 +539,7 @@
 </div>
 </div>
 <p>Overall, we have almost 7 million parameters in our model, which is way too much for a training set with 3000 images. The model will overfit as we will soon see from the results.
-<img alt="First_CNN" src="./images/nn.png" /></p>
+<img alt="First_CNN" src="_images/nn.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
@@ -589,7 +589,7 @@ _________________________________________________________________
 </div>
 </div>
 <p>Next, we compile the model. Because we have now two classes, “binary_crossentropy” is the correct loss_function. There are many gradient descent optimisers available, but usually, RMSprop works very well. More information about RMSprop can be found here: https://keras.io/api/optimizers/rmsprop/.</p>
-<p><img alt="grad_desc" src="./images/Gradient_descent.gif" /></p>
+<p><img alt="grad_desc" src="_images/Gradient_descent.gif" /></p>
 <p>We measure performance with the accuracy metric.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -725,7 +725,7 @@ Epoch 30/30
 </div>
 <p>Let’s check how did it go. In a typical overfitting situation, training accuracy quickly rises to almost 1.0 and validation accuracy stalls to a much lower level. This is also the case here. The training accuracy is 0.984, and the validation accuracy is around 0.72.
 But still, not that bad! The model recognises cats and dogs correctly from the images 72 % of the time.</p>
-<p><img alt="Overfitting" src="./images/Overfitting.svg" /></p>
+<p><img alt="Overfitting" src="_images/Overfitting.svg" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># Load plotting libraries</span>
@@ -1107,7 +1107,7 @@ Epoch 50/50
 <h2><span class="section-number">3.3. </span>Pre-trained model<a class="headerlink" href="#pre-trained-model" title="Permalink to this headline">¶</a></h2>
 <p>Next thing that we could try is to use a pre-trained model that has its parameters already optimised using some other dataset. Usually, CNNs related to computer vision are pre-trained using Imagenet data (http://www.image-net.org/). It is a vast collection of labelled images.</p>
 <p>We add our own layers after the pre-trained architecture. As our pre-trained model, we use VGG16</p>
-<p><img alt="VGG16" src="./images/vgg.png" /></p>
+<p><img alt="VGG16" src="_images/vgg.png" /></p>
 <p>VGG16 is included in the <strong>keras.applications</strong> -module</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1682,7 +1682,7 @@ Epoch 30/30
 </div>
 </div>
 <p>Our model is correct 90 % of the time!</p>
-<p><img alt="thumbs" src="./images/thumbs.jpeg" /></p>
+<p><img alt="thumbs" src="_images/thumbs.jpeg" /></p>
 </div>
 </div>
 
