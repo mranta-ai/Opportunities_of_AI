@@ -26,7 +26,7 @@ Some of the key technologies in computer vision are:
 
 #### Support vector machines
 The Support Vector Machine (SVM) was previously one of the most popular algorithms in modern machine learning. It often provides very impressive classification performance on reasonably sized datasets. However, SVMs have difficulties with large datasets since the computations don’t scale well with the number of training examples. This poor performance with large datasets hinders somewhat their success in computer vision and is the reason why neural networks have partly replaced SVMs.
-![SVMG](./images/svm.png)
+![SVMG](../images/svm.png)
 #### Neural networks
 Neural networks are a large class of models and learning methods. The most traditional is the single hidden layer back-propagation network or a single layer perceptron.
 
