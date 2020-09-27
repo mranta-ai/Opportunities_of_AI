@@ -56,8 +56,6 @@
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="index.html">
   
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
   
   <h1 class="site-logo" id="site-title">Opportunities of AI</h1>
   
@@ -590,7 +588,7 @@ Features:</p>
 </div>
 <div class="section" id="lda">
 <h2><span class="section-number">2.1. </span>LDA<a class="headerlink" href="#lda" title="Permalink to this headline">¶</a></h2>
-<p><img alt="lda" src="_images/topic_model.gif" /></p>
+<p><img alt="lda" src="./images/topic_model.gif" /></p>
 <p>Okay, let’s start our LDA analysis. For this, we need the <strong>corpora</strong> module from Gensim.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1686,7 +1684,7 @@ Name: Top topic, dtype: int64
 <p>Next, we build a topic analysis using a different approach. We create a TF-IDF model from the corpus and apply K-means clustering for that model.</p>
 <p>Explanation of TF-IDF from Wikipedia: “In information retrieval, TF–IDF or TFIDF, short for term frequency–inverse document frequency, is a numerical statistic that is intended to reflect how important a word is to a document in a collection or corpus. It is often used as a weighting factor in searches of information retrieval, text mining, and user modelling. The TF–IDF value increases proportionally to the number of times a word appears in the document and is offset by the number of documents in the corpus that contain the word, which helps to adjust for the fact that some words appear more frequently in general.”</p>
 <p>Explanation of K-means clustering from Wikipedia: “k-means clustering is a method of vector quantization, originally from signal processing, that aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean (cluster centres or cluster centroid), serving as a prototype of the cluster…k-means clustering minimizes within-cluster variances (squared Euclidean distances)…”</p>
-<p><img alt="kmeans" src="_images/kmeans.gif" /></p>
+<p><img alt="kmeans" src="./images/kmeans.gif" /></p>
 <p>From <strong>Gensim.models</strong> we pick up <strong>TfidModel</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1999,8 +1997,8 @@ Cluster 10 words: price, inventory, retailer, supplier, pricing, contract, profi
 </div>
 </div>
 <p>With a smaller corpus, we could use fancy visualisations, like multidimensional scaling and Ward-clustering, to represent the document relationship. However, with over 2000 documents, that is not meaningful. Below are examples of both (not related to our analysis).</p>
-<p><img alt="mds" src="_images/mds.png" /></p>
-<p><img alt="ward" src="_images/ward.jpg" /></p>
+<p><img alt="mds" src="./images/mds.png" /></p>
+<p><img alt="ward" src="./images/ward.jpg" /></p>
 <p>With pandas <strong>crosstab</strong>, we can easily check the connection between the LDA topics and the K-means clusters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

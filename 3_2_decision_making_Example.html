@@ -55,8 +55,6 @@
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="index.html">
   
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
   
   <h1 class="site-logo" id="site-title">Opportunities of AI</h1>
   
@@ -733,7 +731,7 @@ Because we removed some instances, the index is now all messed up. With <strong>
 </div>
 </div>
 <p>Xgboost has a function for cross-validation. We use here 5 folds. The metric is <strong>mean absolute error</strong>.
-<img alt="validation" src="_images/Train-Test-Validation.png" /></p>
+<img alt="validation" src="./images/Train-Test-Validation.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">cv</span><span class="p">(</span><span class="n">param</span><span class="p">,</span><span class="n">dtrain</span><span class="p">,</span><span class="n">num_boost_round</span><span class="o">=</span><span class="mi">1500</span><span class="p">,</span><span class="n">nfold</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">seed</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">metrics</span><span class="o">=</span><span class="s1">&#39;mae&#39;</span><span class="p">)</span>
