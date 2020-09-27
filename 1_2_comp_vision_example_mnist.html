@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. A simple example with MNIST &#8212; Opportunities of AI</title>
+    <title>2. Computer vision example - MNIST &#8212; Opportunities of AI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -36,7 +36,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Example - dogs and cats" href="1_3_comp_vision_example_dogs_cats.html" />
+    <link rel="next" title="3. Computer vision example - dogs and cats" href="1_3_comp_vision_example_dogs_cats.html" />
     <link rel="prev" title="1. Computer vision" href="1_1_Introduction_to_computer_vision.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -88,12 +88,12 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. A simple example with MNIST
+   2. Computer vision example - MNIST
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1_3_comp_vision_example_dogs_cats.html">
-   3. Example - dogs and cats
+   3. Computer vision example - dogs and cats
   </a>
  </li>
 </ul>
@@ -105,17 +105,17 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="2_1_Introduction_to_NLP.html">
-   1. Introduction to NLP
+   1. Introduction to natural language processing
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2_2_LDA_example.html">
-   2. Text analysis example - LDA and other summarisation tools
+   2. NLP example - LDA and other summarisation tools
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2_3_IMDB_example.html">
-   3. Text analysis example - IMDB
+   3. NLP example - IMDB
   </a>
  </li>
 </ul>
@@ -132,7 +132,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="3_2_decision_making_Example.html">
-   2. Example of decisiong making - gradient boosting and a collection of interpretation metrics
+   2. Decision making example - gradient boosting and a collection of interpretation metrics
   </a>
  </li>
 </ul>
@@ -252,8 +252,8 @@
         
               <div>
                 
-  <div class="section" id="a-simple-example-with-mnist">
-<h1><span class="section-number">2. </span>A simple example with MNIST<a class="headerlink" href="#a-simple-example-with-mnist" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="computer-vision-example-mnist">
+<h1><span class="section-number">2. </span>Computer vision example - MNIST<a class="headerlink" href="#computer-vision-example-mnist" title="Permalink to this headline">¶</a></h1>
 <p>For our first computer vision example, we use MNIST-data of handwritten digits and build a machine learning model that predicts the correct digit.</p>
 <p>We use Keras-library for this example that is now included in Tensorflow. First, we import Tensorflow and define an alias “tf” for it.</p>
 <div class="cell docutils container">
@@ -326,7 +326,7 @@ physical_device_desc: &quot;device: XLA_GPU device&quot;
 <div class="section" id="the-mnist-dataset">
 <h2><span class="section-number">2.1. </span>The MNIST dataset<a class="headerlink" href="#the-mnist-dataset" title="Permalink to this headline">¶</a></h2>
 <p>The MNIST database (Modified National Institute of Standards and Technology database) is a large database of handwritten digits that is commonly used as the first test for computer vision models. These are 28x28 pixel images that are anti-aliased from the original NIST black and white images, and thus, grayscale images with 256 levels. The database contains 60,000 training images and 10,000 testing images.</p>
-<p><img alt="MNIST" src="./images/mnist.png" /></p>
+<p><img alt="MNIST" src="_images/mnist.png" /></p>
 <p><strong>Keras.dataset</strong> has the MNIST dataset, so we avoid the hassle of downloading and preprocessing the dataset by ourselves.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -408,7 +408,7 @@ physical_device_desc: &quot;device: XLA_GPU device&quot;
 <div class="section" id="densely-connected-network">
 <h2><span class="section-number">2.2. </span>Densely connected network<a class="headerlink" href="#densely-connected-network" title="Permalink to this headline">¶</a></h2>
 <p>First, we fit a traditional densely connected feed-forward neural network to the data.</p>
-<p><img alt="image.png" src="./images/feed_forward.png" />!</p>
+<p><img alt="image.png" src="_images/feed_forward.png" />!</p>
 <p>Our data is a 3D-tensor of the form 60000 images x 28 pixels x 28 pixels. Sometimes we need to make the transform (60000,28,28) –&gt; (60000,28,28,1) and sometimes not. If you get an error in the model.fit -step, run the code below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -551,7 +551,7 @@ Epoch 5/5
 <div class="section" id="convolutional-neural-network">
 <h2><span class="section-number">2.3. </span>Convolutional neural network<a class="headerlink" href="#convolutional-neural-network" title="Permalink to this headline">¶</a></h2>
 <p>Identifying the digits correctly is a computer vision problem. So, we should expect that convolutional neural networks would perform better. Thus, we build a simple CNN to identify the digits.</p>
-<p><img alt="image.png" src="./images/cnn_example.gif" /></p>
+<p><img alt="image.png" src="_images/cnn_example.gif" /></p>
 <p>With Keras, we can also build the network using sequential <strong>add()</strong>-commands. We first define the <strong>Sequential()</strong>-type and then add the layers with the *<em>add()</em> -function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -769,7 +769,7 @@ Epoch 5/5
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="1_1_Introduction_to_computer_vision.html" title="previous page"><span class="section-number">1. </span>Computer vision</a>
-    <a class='right-next' id="next-link" href="1_3_comp_vision_example_dogs_cats.html" title="next page"><span class="section-number">3. </span>Example - dogs and cats</a>
+    <a class='right-next' id="next-link" href="1_3_comp_vision_example_dogs_cats.html" title="next page"><span class="section-number">3. </span>Computer vision example - dogs and cats</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Example of decisiong making - gradient boosting and a collection of interpretation metrics &#8212; Opportunities of AI</title>
+    <title>2. Decision making example - gradient boosting and a collection of interpretation metrics &#8212; Opportunities of AI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -87,12 +87,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1_2_comp_vision_example_mnist.html">
-   2. A simple example with MNIST
+   2. Computer vision example - MNIST
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1_3_comp_vision_example_dogs_cats.html">
-   3. Example - dogs and cats
+   3. Computer vision example - dogs and cats
   </a>
  </li>
 </ul>
@@ -104,17 +104,17 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="2_1_Introduction_to_NLP.html">
-   1. Introduction to NLP
+   1. Introduction to natural language processing
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2_2_LDA_example.html">
-   2. Text analysis example - LDA and other summarisation tools
+   2. NLP example - LDA and other summarisation tools
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2_3_IMDB_example.html">
-   3. Text analysis example - IMDB
+   3. NLP example - IMDB
   </a>
  </li>
 </ul>
@@ -131,7 +131,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. Example of decisiong making - gradient boosting and a collection of interpretation metrics
+   2. Decision making example - gradient boosting and a collection of interpretation metrics
   </a>
  </li>
 </ul>
@@ -251,8 +251,8 @@
         
               <div>
                 
-  <div class="section" id="example-of-decisiong-making-gradient-boosting-and-a-collection-of-interpretation-metrics">
-<h1><span class="section-number">2. </span>Example of decisiong making - gradient boosting and a collection of interpretation metrics<a class="headerlink" href="#example-of-decisiong-making-gradient-boosting-and-a-collection-of-interpretation-metrics" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="decision-making-example-gradient-boosting-and-a-collection-of-interpretation-metrics">
+<h1><span class="section-number">2. </span>Decision making example - gradient boosting and a collection of interpretation metrics<a class="headerlink" href="#decision-making-example-gradient-boosting-and-a-collection-of-interpretation-metrics" title="Permalink to this headline">¶</a></h1>
 <div class="cell tag_remove-input docutils container">
 </div>
 <p>In this example, we will train an Xgboost-model to company data that has a collection of financial figures. Then, we will use a set of interpretation metrics to analyse our results.</p>
@@ -731,7 +731,7 @@ Because we removed some instances, the index is now all messed up. With <strong>
 </div>
 </div>
 <p>Xgboost has a function for cross-validation. We use here 5 folds. The metric is <strong>mean absolute error</strong>.
-<img alt="validation" src="./images/Train-Test-Validation.png" /></p>
+<img alt="validation" src="_images/Train-Test-Validation.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="n">xgb</span><span class="o">.</span><span class="n">cv</span><span class="p">(</span><span class="n">param</span><span class="p">,</span><span class="n">dtrain</span><span class="p">,</span><span class="n">num_boost_round</span><span class="o">=</span><span class="mi">1500</span><span class="p">,</span><span class="n">nfold</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">seed</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">metrics</span><span class="o">=</span><span class="s1">&#39;mae&#39;</span><span class="p">)</span>

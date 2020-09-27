@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Text analysis example - LDA and other summarisation tools &#8212; Opportunities of AI</title>
+    <title>2. NLP example - LDA and other summarisation tools &#8212; Opportunities of AI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -36,8 +36,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Text analysis example - IMDB" href="2_3_IMDB_example.html" />
-    <link rel="prev" title="1. Introduction to NLP" href="2_1_Introduction_to_NLP.html" />
+    <link rel="next" title="3. NLP example - IMDB" href="2_3_IMDB_example.html" />
+    <link rel="prev" title="1. Introduction to natural language processing" href="2_1_Introduction_to_NLP.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -88,12 +88,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1_2_comp_vision_example_mnist.html">
-   2. A simple example with MNIST
+   2. Computer vision example - MNIST
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1_3_comp_vision_example_dogs_cats.html">
-   3. Example - dogs and cats
+   3. Computer vision example - dogs and cats
   </a>
  </li>
 </ul>
@@ -105,17 +105,17 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="2_1_Introduction_to_NLP.html">
-   1. Introduction to NLP
+   1. Introduction to natural language processing
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. Text analysis example - LDA and other summarisation tools
+   2. NLP example - LDA and other summarisation tools
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2_3_IMDB_example.html">
-   3. Text analysis example - IMDB
+   3. NLP example - IMDB
   </a>
  </li>
 </ul>
@@ -132,7 +132,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="3_2_decision_making_Example.html">
-   2. Example of decisiong making - gradient boosting and a collection of interpretation metrics
+   2. Decision making example - gradient boosting and a collection of interpretation metrics
   </a>
  </li>
 </ul>
@@ -257,8 +257,8 @@
         
               <div>
                 
-  <div class="section" id="text-analysis-example-lda-and-other-summarisation-tools">
-<h1><span class="section-number">2. </span>Text analysis example - LDA and other summarisation tools<a class="headerlink" href="#text-analysis-example-lda-and-other-summarisation-tools" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="nlp-example-lda-and-other-summarisation-tools">
+<h1><span class="section-number">2. </span>NLP example - LDA and other summarisation tools<a class="headerlink" href="#nlp-example-lda-and-other-summarisation-tools" title="Permalink to this headline">¶</a></h1>
 <p>In this example, we analyse a collection of academic journals with Latent Dirichlet Allocation (LDA) and other summarisation tools.</p>
 <p>To manipulate and list files in directories, we need the <strong>os</strong> -library.</p>
 <div class="cell docutils container">
@@ -588,7 +588,7 @@ Features:</p>
 </div>
 <div class="section" id="lda">
 <h2><span class="section-number">2.1. </span>LDA<a class="headerlink" href="#lda" title="Permalink to this headline">¶</a></h2>
-<p><img alt="lda" src="./images/topic_model.gif" /></p>
+<p><img alt="lda" src="_images/topic_model.gif" /></p>
 <p>Okay, let’s start our LDA analysis. For this, we need the <strong>corpora</strong> module from Gensim.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1684,7 +1684,7 @@ Name: Top topic, dtype: int64
 <p>Next, we build a topic analysis using a different approach. We create a TF-IDF model from the corpus and apply K-means clustering for that model.</p>
 <p>Explanation of TF-IDF from Wikipedia: “In information retrieval, TF–IDF or TFIDF, short for term frequency–inverse document frequency, is a numerical statistic that is intended to reflect how important a word is to a document in a collection or corpus. It is often used as a weighting factor in searches of information retrieval, text mining, and user modelling. The TF–IDF value increases proportionally to the number of times a word appears in the document and is offset by the number of documents in the corpus that contain the word, which helps to adjust for the fact that some words appear more frequently in general.”</p>
 <p>Explanation of K-means clustering from Wikipedia: “k-means clustering is a method of vector quantization, originally from signal processing, that aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean (cluster centres or cluster centroid), serving as a prototype of the cluster…k-means clustering minimizes within-cluster variances (squared Euclidean distances)…”</p>
-<p><img alt="kmeans" src="./images/kmeans.gif" /></p>
+<p><img alt="kmeans" src="_images/kmeans.gif" /></p>
 <p>From <strong>Gensim.models</strong> we pick up <strong>TfidModel</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1997,8 +1997,8 @@ Cluster 10 words: price, inventory, retailer, supplier, pricing, contract, profi
 </div>
 </div>
 <p>With a smaller corpus, we could use fancy visualisations, like multidimensional scaling and Ward-clustering, to represent the document relationship. However, with over 2000 documents, that is not meaningful. Below are examples of both (not related to our analysis).</p>
-<p><img alt="mds" src="./images/mds.png" /></p>
-<p><img alt="ward" src="./images/ward.jpg" /></p>
+<p><img alt="mds" src="_images/mds.png" /></p>
+<p><img alt="ward" src="_images/ward.jpg" /></p>
 <p>With pandas <strong>crosstab</strong>, we can easily check the connection between the LDA topics and the K-means clusters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2203,8 +2203,8 @@ Cluster 10 words: price, inventory, retailer, supplier, pricing, contract, profi
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="2_1_Introduction_to_NLP.html" title="previous page"><span class="section-number">1. </span>Introduction to NLP</a>
-    <a class='right-next' id="next-link" href="2_3_IMDB_example.html" title="next page"><span class="section-number">3. </span>Text analysis example - IMDB</a>
+    <a class='left-prev' id="prev-link" href="2_1_Introduction_to_NLP.html" title="previous page"><span class="section-number">1. </span>Introduction to natural language processing</a>
+    <a class='right-next' id="next-link" href="2_3_IMDB_example.html" title="next page"><span class="section-number">3. </span>NLP example - IMDB</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

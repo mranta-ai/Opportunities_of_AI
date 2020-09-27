@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1. Introduction to NLP &#8212; Opportunities of AI</title>
+    <title>1. Introduction to natural language processing &#8212; Opportunities of AI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -36,8 +36,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2. Text analysis example - LDA and other summarisation tools" href="2_2_LDA_example.html" />
-    <link rel="prev" title="3. Example - dogs and cats" href="1_3_comp_vision_example_dogs_cats.html" />
+    <link rel="next" title="2. NLP example - LDA and other summarisation tools" href="2_2_LDA_example.html" />
+    <link rel="prev" title="3. Computer vision example - dogs and cats" href="1_3_comp_vision_example_dogs_cats.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -88,12 +88,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1_2_comp_vision_example_mnist.html">
-   2. A simple example with MNIST
+   2. Computer vision example - MNIST
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1_3_comp_vision_example_dogs_cats.html">
-   3. Example - dogs and cats
+   3. Computer vision example - dogs and cats
   </a>
  </li>
 </ul>
@@ -105,17 +105,17 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   1. Introduction to NLP
+   1. Introduction to natural language processing
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2_2_LDA_example.html">
-   2. Text analysis example - LDA and other summarisation tools
+   2. NLP example - LDA and other summarisation tools
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2_3_IMDB_example.html">
-   3. Text analysis example - IMDB
+   3. NLP example - IMDB
   </a>
  </li>
 </ul>
@@ -132,7 +132,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="3_2_decision_making_Example.html">
-   2. Example of decisiong making - gradient boosting and a collection of interpretation metrics
+   2. Decision making example - gradient boosting and a collection of interpretation metrics
   </a>
  </li>
 </ul>
@@ -264,10 +264,10 @@
         
               <div>
                 
-  <div class="section" id="introduction-to-nlp">
-<h1><span class="section-number">1. </span>Introduction to NLP<a class="headerlink" href="#introduction-to-nlp" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="introduction-to-natural-language-processing">
+<h1><span class="section-number">1. </span>Introduction to natural language processing<a class="headerlink" href="#introduction-to-natural-language-processing" title="Permalink to this headline">¶</a></h1>
 <p>Natural language processing (NLP) is a collective term referring to computational processing of human languages. It includes methods that analyse human-produced text, and methods that create natural language as output. Compared to many other machine learning tasks, natural language processing is very challenging, as human language is inherently ambiguous, ever-changing, and not well-defined.</p>
-<p><img alt="read_robot" src="./images/read_robot.jpg" /></p>
+<p><img alt="read_robot" src="_images/read_robot.jpg" /></p>
 <p>There is a need for better and better NLP-algorithms, as information in the textual format is increasing exponentially.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
@@ -275,18 +275,18 @@
 </div>
 </div>
 <p>Until 2014, core NLP techniques were dominated by linear modelling approaches that use supervised learning. Key algorithms were simple neural networks, support vector machines and logistic regression, trained over high dimensional and sparse feature vectors (bag-of-words -vectors).</p>
-<p><img alt="SVM" src="./images/svm.png" /></p>
+<p><img alt="SVM" src="_images/svm.png" /></p>
 <p>Around 2014, the field has started to see some success in switching from linear models over sparse inputs to nonlinear complex neural network models over dense inputs. A key difference is how words are presented as relatively low-dimensional vectors that contain semantic information about the word. Two key training algorithms are <strong>continuous-bag-of-words</strong> and <strong>skip-gram</strong> -algorithms.</p>
 <p>The CBOW model architecture tries to predict the current target word (the centre word) based on the source context words (surrounding words).</p>
 <p>The Skip-gram model architecture usually tries to achieve the reverse of what the CBOW model does. It tries to predict the source context words (surrounding words) given a target word (the centre word).</p>
-<p><img alt="word2vec" src="./images/word2vec.png" /></p>
+<p><img alt="word2vec" src="_images/word2vec.png" /></p>
 <p>Some of the neural-network techniques are generalisations of the linear models and can be just replaced in place of the linear classifiers. Others have a totally new approach for a natural language processing task and provide new modelling opportunities. In particular, a family of approaches based on recurrent neural networks (RNNs) removes the reliance on the Markov assumption that was prevalent in sequence models, allowing to condition on arbitrarily long sequences and produce effective feature extractors. This enables the models to analyse whole sentences (and even more) instead of words, which has led to breakthroughs in language modelling, automatic machine translation, and various other applications.</p>
 <p>Also, recent transformers-based models have achieved revolutionary results. The success of the architecture is based on a concept called attention that improves the learning by focusing on the key features and ignoring features that do not help in the task at hand. This conceptually simple innovation is largely behind the success of pre-trained models like BERT and GPT-3. The transformer is an architecture for transforming one sequence into another one with the help of two parts (Encoder and Decoder), but it differs from the previously described/existing sequence-to-sequence models because it does not imply any recurrent architectures.</p>
 <p>(The Markov assumption means that The Markov property holds. A stochastic process has the Markov property if the conditional probability distribution of future states of the process (conditional on both past and present states) depends only upon the present state, not on the sequence of events that preceded it.)</p>
 <div class="section" id="topic-models">
 <h2><span class="section-number">1.1. </span>Topic models<a class="headerlink" href="#topic-models" title="Permalink to this headline">¶</a></h2>
 <p>A topic model is a type of statistical model for inferring the “topics” or “themes” that occur in a collection of documents. Topic modelling is a popular tool for the discovery of hidden semantic structures in a text body. Topic models assume that there are typical words that appear more frequently in a document with a certain topic. Moreover, some words are especially rare for a certain topic and for some words, there is no difference between a document with the topic and other documents. The “topics” produced by topic modelling techniques are clusters of similar words. For example, a very popular topic model called Latent Dirichlet Allocation assumes that documents are distributions of topics and topics are distributions of words.</p>
-<p><img alt="topic_model" src="./images/topic_model.gif" /></p>
+<p><img alt="topic_model" src="_images/topic_model.gif" /></p>
 </div>
 <div class="section" id="neural-network-models">
 <h2><span class="section-number">1.2. </span>Neural network models<a class="headerlink" href="#neural-network-models" title="Permalink to this headline">¶</a></h2>
@@ -295,7 +295,7 @@
 </div>
 <div class="section" id="pretrained-language-models">
 <h2><span class="section-number">1.3. </span>Pretrained language models<a class="headerlink" href="#pretrained-language-models" title="Permalink to this headline">¶</a></h2>
-<p><img alt="elmo" src="./images/elmo.jpg" /></p>
+<p><img alt="elmo" src="_images/elmo.jpg" /></p>
 <div class="section" id="bert">
 <h3><span class="section-number">1.3.1. </span>BERT<a class="headerlink" href="#bert" title="Permalink to this headline">¶</a></h3>
 <p>Bidirectional Encoder Representations from Transformers (BERT) is a pre-trained NLP model developed by Google.</p>
@@ -307,7 +307,7 @@
 <h3><span class="section-number">1.3.2. </span>GPT-3<a class="headerlink" href="#gpt-3" title="Permalink to this headline">¶</a></h3>
 <p>GPT-3 is the current state-of-the-art language model that has achieved revolutionary results. It is also the largest ML model to date, with 175 billion parameters. It was trained with data that has 499 billion tokens (words). For example, GPT-3 can create news articles that are difficult to distinguish from human-created news. It is also able to have conversations with a human. However, despite its’ stellar performance in creating meaningful text, it still does not understand anything that it is saying.
 Below is an example article generated by GPT-3.</p>
-<p><img alt="gpt3_text" src="./images/gpt3_desc_text.jpg" /></p>
+<p><img alt="gpt3_text" src="_images/gpt3_desc_text.jpg" /></p>
 </div>
 </div>
 </div>
@@ -340,8 +340,8 @@ Below is an example article generated by GPT-3.</p>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="1_3_comp_vision_example_dogs_cats.html" title="previous page"><span class="section-number">3. </span>Example - dogs and cats</a>
-    <a class='right-next' id="next-link" href="2_2_LDA_example.html" title="next page"><span class="section-number">2. </span>Text analysis example - LDA and other summarisation tools</a>
+    <a class='left-prev' id="prev-link" href="1_3_comp_vision_example_dogs_cats.html" title="previous page"><span class="section-number">3. </span>Computer vision example - dogs and cats</a>
+    <a class='right-next' id="next-link" href="2_2_LDA_example.html" title="next page"><span class="section-number">2. </span>NLP example - LDA and other summarisation tools</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
