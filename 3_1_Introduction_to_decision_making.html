@@ -36,8 +36,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2. Example of decisiong making - gradient boosting and a collection of interpretation metrics" href="3_2_decision_making_Example.html" />
-    <link rel="prev" title="3. Text analysis example - IMDB" href="2_3_IMDB_example.html" />
+    <link rel="next" title="2. Decision making example - gradient boosting and a collection of interpretation metrics" href="3_2_decision_making_Example.html" />
+    <link rel="prev" title="3. NLP example - IMDB" href="2_3_IMDB_example.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -88,12 +88,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1_2_comp_vision_example_mnist.html">
-   2. A simple example with MNIST
+   2. Computer vision example - MNIST
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="1_3_comp_vision_example_dogs_cats.html">
-   3. Example - dogs and cats
+   3. Computer vision example - dogs and cats
   </a>
  </li>
 </ul>
@@ -105,17 +105,17 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="2_1_Introduction_to_NLP.html">
-   1. Introduction to NLP
+   1. Introduction to natural language processing
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2_2_LDA_example.html">
-   2. Text analysis example - LDA and other summarisation tools
+   2. NLP example - LDA and other summarisation tools
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="2_3_IMDB_example.html">
-   3. Text analysis example - IMDB
+   3. NLP example - IMDB
   </a>
  </li>
 </ul>
@@ -132,7 +132,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="3_2_decision_making_Example.html">
-   2. Example of decisiong making - gradient boosting and a collection of interpretation metrics
+   2. Decision making example - gradient boosting and a collection of interpretation metrics
   </a>
  </li>
 </ul>
@@ -295,27 +295,27 @@
 <h1><span class="section-number">1. </span>Introduction to decision making<a class="headerlink" href="#introduction-to-decision-making" title="Permalink to this headline">¶</a></h1>
 <p>Machine learning models excel at making predictions. However, when we use machine learning in decision making, very often interpretability is as important as good predictions. Therefore, research on interpretable machine learning has increased substantially in the last few years, and new methods for the interpretation is introduced almost weekly. To introduce everything would be impossible and therefore, I try to focus on the following to most popular methods that have established their place in the decision making process. Hopefully, this gives a reader knowledge in fundamentals of interpretable machine learning,</p>
 <p>One could ask why we need interpretations? If our model state-of-the-art in prediction, why not just trust the model and forget what is the reason for such a prediction? First of all, even prediction performance can not be measured with a single metric. In the figure below, you see the collection of metrics that we can use to measure binary-classification performance. So, even the prediction performance of a model depends on the metric (interpretation) used.</p>
-<p><img alt="conf_matrix" src="./images/conf_matrix.png" /></p>
+<p><img alt="conf_matrix" src="_images/conf_matrix.png" /></p>
 <p>But even if we could measure prediction performance reliably, the interpretation of a model is essential in many applications. Even if we could predict customer churn in our company accurately, we would probably like to know <strong>why</strong> they will churn. Or, if we are using an ML model in our bank to decide who gets a loan an who doesn’t, we are probably obliged to <strong>explain</strong> why our model, for example, rejected a loan application. Furthermore, in some applications understanding the behaviour of a machine learning model can help us learn more about the problem, the data and the reason why a model might fail. Of course, this is not the case always. For example, it is not vital for a company to understand how its’ product recommendation system works. It is enough that it works well and gives the customers recommendation that boosts sales. Furthermore, some methods are extensively studied and evaluated, and therefore, do not need extensive interpretation.</p>
 <p>However, interpretation of machine learning models is vital in many applications and the subject of increasing research interest in the ML research community. The more ML is affecting our lives, the more important it is for us to understand its’ behaviour. As an example of good progress in the field, internet companies nowadays add an explanation to their product recommendations in the form of products often bought together -list.</p>
-<p><img alt="why" src="./images/why.png" /></p>
+<p><img alt="why" src="_images/why.png" /></p>
 <p>In the following, I will go through the most common ML explanation methods. I will explain only the basic idea behind the method and avoid any math. In section 3.2, we will analyse some of these methods in more detail.</p>
 <div class="section" id="plots">
 <h2><span class="section-number">1.1. </span>Plots<a class="headerlink" href="#plots" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="partial-dependence-plot">
 <h3><span class="section-number">1.1.1. </span>Partial dependence plot<a class="headerlink" href="#partial-dependence-plot" title="Permalink to this headline">¶</a></h3>
 <p>The partial dependence plot (PDP) is a  tool to analyse the marginal effect of one (or few) variables on the prediction. It is calculated by averaging out the effect of other variables. It shows us the functional form of the relationship between the target and a variable. So, initially, the PDP appears to be an excellent tool to analyse the effect of variables to the prediction. However, the assumption of independence is the main issue with PDP plots. The method assumes that the features of a model are not correlated. Because of this, the method also ignores interactions (between analysed and non-analysed variables).</p>
-<p><img alt="pdp" src="./images/Partial_depenence_plots.png" /></p>
+<p><img alt="pdp" src="_images/Partial_depenence_plots.png" /></p>
 </div>
 <div class="section" id="individual-conditional-expectations">
 <h3><span class="section-number">1.1.2. </span>Individual conditional expectations<a class="headerlink" href="#individual-conditional-expectations" title="Permalink to this headline">¶</a></h3>
 <p>Individual Conditional Expectation (ICE) plots basically display a PDP line for every instance. Thus, ICE plots show how a variable affects the prediction for every instance separately. A PDP is the average of the lines of an ICE plot. This solves the problem of interaction that PDP plots have. However, the independence assumption still holds and is also on an issue with ICE plots.</p>
-<p><img alt="ice_plot" src="./images/ICE.png" /></p>
+<p><img alt="ice_plot" src="_images/ICE.png" /></p>
 </div>
 <div class="section" id="accumulated-local-effects">
 <h3><span class="section-number">1.1.3. </span>Accumulated local effects<a class="headerlink" href="#accumulated-local-effects" title="Permalink to this headline">¶</a></h3>
 <p>Accumulated local effects plots are similar to PDP and ICE plots, i.e., they show how a feature affects the prediction on average. However, the main benefit of ALE plots is that they do not suffer about problems caused by the independence assumption.  So, they are an unbiased alternative to PDP plots.</p>
-<p><img alt="ale_plot" src="./images/ale.png" /></p>
+<p><img alt="ale_plot" src="_images/ale.png" /></p>
 </div>
 </div>
 <div class="section" id="local-and-global-explanations">
@@ -335,12 +335,12 @@
 <div class="section" id="shapley-additive-explanations">
 <h3><span class="section-number">1.2.4. </span>Shapley additive explanations<a class="headerlink" href="#shapley-additive-explanations" title="Permalink to this headline">¶</a></h3>
 <p>SHapley Additive exPlanations (SHAP) is a method to explain individual predictions using the game-theoretically optimal Shapley Values. The methods give an estimate for every instance, how the model’s prediction depends on each feature. Basically, the prediction is split into parts, where each part represents the effect of one feature to the prediction. This allows us to draw, for example, scatter charts that can be used to infer the functional form of the dependence between a feature and the target. Furthermore, because SHAP is based on Shapley values, it also accounts complex interactions between the features.</p>
-<p><img alt="shap_sc" src="./images/shap_sc.png" /></p>
+<p><img alt="shap_sc" src="_images/shap_sc.png" /></p>
 </div>
 <div class="section" id="shapley-additive-global-explanations">
 <h3><span class="section-number">1.2.5. </span>Shapley additive global explanations<a class="headerlink" href="#shapley-additive-global-explanations" title="Permalink to this headline">¶</a></h3>
-<p>Initially, the SHAP values were considered to be efficient methods for global explanations also. However, because the SHAP values are contributions of each feature to the prediction, it is difficult to construct a reliable aggregate metric, for example, to feature importance. This is solved in Shapley Additive Global importancE (SAGE). Instead of estimating the contribution of features to the prediction, the SAGE values estimate the contribution of each feature to the decrease of the loss function. Therefore, for example, an average of individual explanations would be a reliable estimate of feature importance. Like SHAP, SAGE also accounts for complex feature interactions, because it is based on Shapley values.</p>
-<p><img alt="sage_plot" src="./images/sage.png" /></p>
+<p>Initially, the SHAP values were considered to be efficient methods for global explanations. However, because the SHAP values are contributions of each feature to the prediction, it is difficult to construct a reliable aggregate metric, for example, to feature importance. This is solved in Shapley Additive Global importancE (SAGE). Instead of estimating the contribution of features to the prediction, the SAGE values estimate the contribution of each feature to the decrease of the loss function. Therefore, for example, an average of individual explanations would be a reliable estimate of feature importance. Like SHAP, SAGE also accounts for complex feature interactions, because it is based on Shapley values.</p>
+<p><img alt="sage_plot" src="_images/sage.png" /></p>
 </div>
 </div>
 </div>
@@ -373,8 +373,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="2_3_IMDB_example.html" title="previous page"><span class="section-number">3. </span>Text analysis example - IMDB</a>
-    <a class='right-next' id="next-link" href="3_2_decision_making_Example.html" title="next page"><span class="section-number">2. </span>Example of decisiong making - gradient boosting and a collection of interpretation metrics</a>
+    <a class='left-prev' id="prev-link" href="2_3_IMDB_example.html" title="previous page"><span class="section-number">3. </span>NLP example - IMDB</a>
+    <a class='right-next' id="next-link" href="3_2_decision_making_Example.html" title="next page"><span class="section-number">2. </span>Decision making example - gradient boosting and a collection of interpretation metrics</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
