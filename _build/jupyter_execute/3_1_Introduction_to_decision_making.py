@@ -48,7 +48,7 @@ SHapley Additive exPlanations (SHAP) is a method to explain individual predictio
 ![shap_sc](./images/shap_sc.png)
 
 #### Shapley additive global explanations
-Initially, the SHAP values were considered to be efficient methods for global explanations also. However, because the SHAP values are contributions of each feature to the prediction, it is difficult to construct a reliable aggregate metric, for example, to feature importance. This is solved in Shapley Additive Global importancE (SAGE). Instead of estimating the contribution of features to the prediction, the SAGE values estimate the contribution of each feature to the decrease of the loss function. Therefore, for example, an average of individual explanations would be a reliable estimate of feature importance. Like SHAP, SAGE also accounts for complex feature interactions, because it is based on Shapley values.
+Initially, the SHAP values were considered to be efficient methods for global explanations. However, because the SHAP values are contributions of each feature to the prediction, it is difficult to construct a reliable aggregate metric, for example, to feature importance. This is solved in Shapley Additive Global importancE (SAGE). Instead of estimating the contribution of features to the prediction, the SAGE values estimate the contribution of each feature to the decrease of the loss function. Therefore, for example, an average of individual explanations would be a reliable estimate of feature importance. Like SHAP, SAGE also accounts for complex feature interactions, because it is based on Shapley values.
 
 ![sage_plot](./images/sage.png)
 
