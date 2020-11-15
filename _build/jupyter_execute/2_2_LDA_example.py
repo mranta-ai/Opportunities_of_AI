@@ -71,7 +71,7 @@ Here is an example of raw text from the first document.
 
 raw_text[0][3200:3500]
 
-For the following steps, we need Gensim that is a multipurpose NLP library specially designed for topic modelling.
+For the following steps, we need Gensim that is a multipurpose NLP library especially designed for topic modelling.
 
 Here is a short description from the Gensim Github-page ([github.com/RaRe-Technologies/gensim](https://github.com/RaRe-Technologies/gensim)):
 

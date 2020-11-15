@@ -19,7 +19,7 @@ Until 2014, core NLP techniques were dominated by linear modelling approaches th
 
 ![SVM](./images/svm.png)
 
-Around 2014, the field has started to see some success in switching from linear models over sparse inputs to nonlinear complex neural network models over dense inputs. A key difference is how words are presented as relatively low-dimensional vectors that contain semantic information about the word. Two key training algorithms are **continuous-bag-of-words** and **skip-gram** -algorithms.
+Around 2014, the field has started to see some success in switching from linear models over sparse inputs to nonlinear complex neural network models over dense inputs. A key difference is how words are presented as relatively low-dimensional vectors that contain semantic information about the words. Two key training algorithms are **continuous-bag-of-words** and **skip-gram** -algorithms.
 
 The CBOW model architecture tries to predict the current target word (the centre word) based on the source context words (surrounding words).
 
@@ -52,7 +52,7 @@ Neural language models represent words in a distributed way, as a combination of
 #### BERT
 Bidirectional Encoder Representations from Transformers (BERT) is a pre-trained NLP model developed by Google. 
 
-The original English-language BERT model comes with two pre-trained general types: (1) the BERTBASE which uses the BooksCorpus with 800M words, and (2) the BERTLARGE that uses the English Wikipedia with 2,500M words.
+The original English-language BERT model comes with two pre-trained general types: (1) the BERTBASE which uses BooksCorpus with 800M words, and (2) the BERTLARGE that uses English Wikipedia with 2,500M words.
 
 At the time introduction, BERT achieved state-of-the-art in many NLP tasks, like language understanding and question answering. BERT started the revolution of modern language models.
 
