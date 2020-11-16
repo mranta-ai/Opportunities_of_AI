@@ -5,7 +5,7 @@ logging.disable(sys.maxsize)
 import warnings
 warnings.filterwarnings('ignore')
 
-In this example, we will train an Xgboost-model to company data that has a collection of financial figures. Then, we will use a set of interpretation metrics to analyse our results.
+In this example, we will train an Xgboost-model to a collection of financial figures from S&P1500 companies. Then, we will use a set of interpretation metrics to analyse our results.
 
 Let's start by loading our data. For that, we need the pandas library that has a convenient function to read csv-files.
 
@@ -82,7 +82,7 @@ Xgboost uses its' own data structure, called DMatrix. It speeds up calculations 
 
 dtrain = xgb.DMatrix(x_df, label=y_df, nthread = -1)
 
-Next, we need to define the parameters of the xgboost model. This is a very difficult task and more like black magic than science. You can easily play with different hyperparameter settings for days, and still finding combinations that improve performance. And here is only part of the parameters! More info about the parameters is here: [xgboost.readthedocs.io/en/latest/parameter.html](https://xgboost.readthedocs.io/en/latest/parameter.html)
+Next, we need to define the parameters of the xgboost model. This is a very difficult task and more like black magic than science. You can easily play with different hyperparameter settings for days, and still finding combinations that improve the performance. And here is only part of the parameters! More info about the parameters is here: [xgboost.readthedocs.io/en/latest/parameter.html](https://xgboost.readthedocs.io/en/latest/parameter.html)
 
 m_depth = 5
 eta = 0.1
@@ -139,7 +139,7 @@ With **plot_type = 'dot'** we get a much more detailed plot.
 
 shap.summary_plot(shap_values_XGB_test,x_df,plot_type='dot',max_display=30)
 
-Next, we use the SHAP values to build up 2D scatter graphs for every feature. It shows the effect of a feature for the prediction for every instance.
+Next, we use the SHAP values to build up 2D scatter graphs for every feature. They shows the effect of a feature for the prediction for every instance.
 
 fig, axs = plt.subplots(7,3,figsize=(16,22),squeeze=True)
 ind = 0
@@ -166,7 +166,7 @@ shap.waterfall_plot(explainerXGB.expected_value,shap_values_XGB_test[2000],x_df.
 
 ### Other interpretation methods
 
-For the following methods, we need to use Xgboost's Scikit-learn wrapper **XGBRegressor()** to turn our Xgboost to be compatible with the Scikit-learn ecosystem.
+For the following methods, we need to use the Xgboost's Scikit-learn wrapper **XGBRegressor()** to make our Xgboost model to be compatible with the Scikit-learn ecosystem.
 
 m_depth = 5
 eta = 0.1
